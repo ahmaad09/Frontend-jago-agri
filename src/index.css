@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* add the code bellow */
+@layer utilities {
+  /* Hide scrollbar for Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 5px solid rgba(255, 255, 255, 0.3);
+  border-top-color: white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Tailwind CSS Custom Styles for react-calendar */
+/* Tambahkan di file CSS Anda (mis. index.css atau App.css) */
+.react-calendar__tile {
+  @apply transition duration-200 ease-in-out; /* Efek transisi */
+}
+
+.react-calendar__tile:hover {
+  @apply bg-blue-100 transform scale-105; /* Efek hover */
+}
+
+.react-calendar__tile--active {
+  @apply bg-blue-600 text-white; /* Warna untuk tanggal aktif */
+}
+
+.react-calendar__tile--active:enabled:hover {
+  @apply bg-blue-700; /* Warna saat hover pada tanggal aktif */
+}
+/* Custom background color for react-calendar */
+.react-calendar {
+  @apply bg-green-500; /* Ubah warna latar belakang menjadi hijau */
+  border-radius: 0.5rem; /* Tambahkan sedikit rounded corner */
+}
+
+
+/* Animasi slide-down dan fade-in */
+.menu-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-exit {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.menu-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+}
